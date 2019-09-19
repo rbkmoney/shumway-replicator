@@ -1,4 +1,4 @@
-package com.rbkmoney.shumway.replicator;
+package com.rbkmoney.shumway.replicator.exception;
 
 /**
  * Created by vpankrashkin on 11.05.18.

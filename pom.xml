@@ -18,15 +18,8 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dockerfile.base.service.tag>22c57470c4fc47161894f036b7cf9d70f42b75f5</dockerfile.base.service.tag>
-        <damsel.version>1.234-5b4e65d</damsel.version>
         <shared.resources.version>0.3.1</shared.resources.version>
 
-        <db.host.name>localhost</db.host.name>
-        <db.host.port>5432</db.host.port>
-        <db.name>shumway</db.name>
-        <db.url>jdbc:postgresql://${db.host.name}:${db.host.port}/${db.name}</db.url>
-        <db.user>postgres</db.user>
-        <db.password>postgres</db.password>
         <server.port>8080</server.port>
         <exposed.ports>${server.port}</exposed.ports>
     </properties>
@@ -37,6 +30,18 @@
             <groupId>com.rbkmoney.woody</groupId>
             <artifactId>woody-thrift</artifactId>
             <version>1.1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney.logback</groupId>
@@ -51,7 +56,12 @@
         <dependency>
             <groupId>com.rbkmoney</groupId>
             <artifactId>damsel</artifactId>
-            <version>${damsel.version}</version>
+            <version>1.324-5d47bde</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rbkmoney</groupId>
+            <artifactId>shumpune-proto</artifactId>
+            <version>1.15-4c87f03</version>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney.geck</groupId>
@@ -78,6 +88,10 @@
             <version>4.3.14.RELEASE</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
         </dependency>
@@ -86,9 +100,17 @@
             <artifactId>postgresql</artifactId>
             <version>9.4.1212</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
         <!--Test libs-->
+        <dependency>
+            <groupId>com.rbkmoney</groupId>
+            <artifactId>easyway</artifactId>
+            <version>0.2.0</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -105,7 +127,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
     </dependencies>
 
     <build>
