@@ -8,6 +8,7 @@
         <groupId>com.rbkmoney</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.1.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <artifactId>shumway-replicator</artifactId>
@@ -17,9 +18,10 @@
         <project.maintainer>Vladimir Pankrashkin &lt;v.pankrashkin@rbkmoney.com&gt;</project.maintainer>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <dockerfile.base.service.tag>22c57470c4fc47161894f036b7cf9d70f42b75f5</dockerfile.base.service.tag>
+        <dockerfile.base.service.tag>bc95d0d6dc13c693acd2b274531a7d604b877bf3</dockerfile.base.service.tag>
         <damsel.version>1.234-5b4e65d</damsel.version>
-        <shared.resources.version>0.3.1</shared.resources.version>
+        <dockerfile.registry>dr2.rbkmoney.com</dockerfile.registry>
+        <shared.resources.version>0.3.6</shared.resources.version>
 
         <db.host.name>localhost</db.host.name>
         <db.host.port>5432</db.host.port>
@@ -29,6 +31,7 @@
         <db.password>postgres</db.password>
         <server.port>8080</server.port>
         <exposed.ports>${server.port}</exposed.ports>
+        <exposed.ports>${server.port}</exposed.ports>
     </properties>
 
     <dependencies>
@@ -37,11 +40,6 @@
             <groupId>com.rbkmoney.woody</groupId>
             <artifactId>woody-thrift</artifactId>
             <version>1.1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>com.rbkmoney.logback</groupId>
-            <artifactId>nop-rolling</artifactId>
-            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney</groupId>
